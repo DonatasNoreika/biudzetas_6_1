@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Žurnalas{% endblock %}
+{% block content %}
+{% for irasas in zurnalas %}
+<hr>
+<p>{{ irasas }}</p>
+{% endfor %}
+{% endblock %}
