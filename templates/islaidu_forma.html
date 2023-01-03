@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Keliamųjų metų forma{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+<form action="" method="post">
+    <div class="mb-3 mt-3">
+      <label for="suma">Suma:</label>
+      <input type="text" class="form-control" id="suma" placeholder="Įveskite sumą" name="suma">
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="atsiskaitymo_budas">Atsiskaitymo būdas:</label>
+      <input type="text" class="form-control" id="atsiskaitymo_budas" placeholder="Įveskite atsiskaitymo būdą" name="atsiskaitymo_budas">
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="isigyta_preke_paslauga">Įsigyta prekė/paslauga:</label>
+      <input type="text" class="form-control" id="isigyta_preke_paslauga" placeholder="Įveskite įsigytą prekę ar paslaugą" name="isigyta_preke_paslauga">
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="info">Informacija:</label>
+        <textarea type="text" class="form-control" id="info" placeholder="Įveskite informaciją" name="info"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Įvesti</button>
+  </form>
+</div>
+{% endblock %}

@@ -31,6 +31,19 @@ def ivestipajamas():
         return redirect('/zurnalas/')
 
 
+@app.route("/ivestiislaidas/", methods=['GET', 'POST'])
+def ivestiislaidas():
+    if request.method == "GET":
+        return render_template('islaidu_forma.html')
+    if request.method == "POST":
+        suma = float(request.form['suma'])
+        atsiskaitymo_budas = request.form['atsiskaitymo_budas']
+        isigyta_preke_paslauga = request.form['isigyta_preke_paslauga']
+        info = request.form['info']
+        biudzetas.prideti_islaidu_irasa(suma, atsiskaitymo_budas, isigyta_preke_paslauga, info)
+        return redirect('/zurnalas/')
+
+
 
 # while True:
 #     ivedimas = int(input("1 - įvesti pajamas\n2 - įvesti išlaidas\n3 - ataskaita\n4 - balansas\n0 - išeiti\n"))
