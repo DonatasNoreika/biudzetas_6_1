@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Keliamųjų metų forma{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+<form action="" method="post">
+    <div class="mb-3 mt-3">
+      <label for="suma">Suma:</label>
+      <input type="text" class="form-control" id="suma" placeholder="Įveskite sumą" name="suma">
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="siuntejas">Siuntėjas:</label>
+      <input type="text" class="form-control" id="siuntejas" placeholder="Įveskite siuntėją" name="siuntejas">
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="info">Informacija:</label>
+        <textarea type="text" class="form-control" id="info" placeholder="Įveskite informaciją" name="info"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Įvesti</button>
+  </form>
+</div>
+{% endblock %}

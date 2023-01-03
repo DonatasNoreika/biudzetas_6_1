@@ -1,5 +1,5 @@
 from biudzetas import Biudzetas
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
@@ -18,6 +18,19 @@ def zurnalas():
 def balansas():
     balansas = biudzetas.gauti_balansa()
     return render_template("balansas.html", balansas=balansas)
+
+@app.route("/ivestipajamas/", methods=['GET', 'POST'])
+def ivestipajamas():
+    if request.method == "GET":
+        return render_template('pajamu_forma.html')
+    if request.method == "POST":
+        suma = float(request.form['suma'])
+        siuntejas = request.form['siuntejas']
+        info = request.form['info']
+        biudzetas.prideti_pajamu_irasa(suma, siuntejas, info)
+        return redirect('/zurnalas/')
+
+
 
 # while True:
 #     ivedimas = int(input("1 - įvesti pajamas\n2 - įvesti išlaidas\n3 - ataskaita\n4 - balansas\n0 - išeiti\n"))
